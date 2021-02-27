@@ -13,7 +13,7 @@ class CreateUserRoleModelsTable extends Migration
      */
     public function up()
     {
-        $table_name = config('hemmy_role_manager.database.user_roles');
+        $table_name = 'hemmmy_user_roles';
         Schema::create($table_name, function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('rid');
@@ -31,7 +31,7 @@ class CreateUserRoleModelsTable extends Migration
      */
     public function down()
     {
-        $table_name = config('hemmy_role_manager.database.user_roles');
+        $table_name = 'hemmmy_user_roles';
         Schema::dropIfExists($table_name);
     }
 }

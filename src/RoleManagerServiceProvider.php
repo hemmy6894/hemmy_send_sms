@@ -1,6 +1,6 @@
 <?php
 
-namespace Hemmy\RoleManamger;
+namespace Hemmy\RoleManager;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,10 +13,7 @@ class RoleManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/hemmy_role_manager.php' => config_path('hemmy_role_manager.php'),
-        ], 'hemmy_role_manager');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publish_all();
     }
 
     /**
@@ -30,5 +27,14 @@ class RoleManagerServiceProvider extends ServiceProvider
             __DIR__.'/../config/hemmy_role_manager.php',
             'hemmy_role_manager'
         );
+    }
+
+    public function publish_all($tag='hemmy_role_manager'){
+        $this->publishes([
+            __DIR__.'/../config/hemmy_role_manager.php' => config_path('hemmy_role_manager.php'),
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
+        ], $tag);
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/../routes/hemmy.php');
     }
 }

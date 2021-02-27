@@ -13,8 +13,8 @@ class CreateSystemFunctionModelsTable extends Migration
      */
     public function up()
     {
-        $table_name = config('hemmy_role_manager.database.system_functions');
-        Schema::create('system_functions', function (Blueprint $table) {
+        $table_name = 'hemmy_functions';
+        Schema::create($table_name, function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('function_name');
             $table->integer('status')->default(1);
@@ -29,7 +29,7 @@ class CreateSystemFunctionModelsTable extends Migration
      */
     public function down()
     {
-        $table_name = config('hemmy_role_manager.database.system_functions');
+        $table_name = 'hemmy_functions';;
         Schema::dropIfExists($table_name);
     }
 }
