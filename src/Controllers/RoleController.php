@@ -3,8 +3,10 @@
 namespace Hemmy\RoleManamger\Controllers;
 
 class RoleController {
-    public function __invoke($array = [])
+    public static function print_array($array = [])
     {
+        $value = config('hemmy.name')??"Hemmy Test";
+        echo $value . "<br />";
         print_r($array);
     }
 }
