@@ -35,6 +35,6 @@ class RoleManagerServiceProvider extends ServiceProvider
             __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], $tag);
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/../routes/hemmy.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/hemmy.php');
     }
 }
