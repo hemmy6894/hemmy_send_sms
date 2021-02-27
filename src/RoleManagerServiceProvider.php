@@ -16,6 +16,7 @@ class RoleManagerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/hemmy_role_manager.php' => config_path('hemmy_role_manager.php'),
         ], 'hemmy_role_manager');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
