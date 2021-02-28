@@ -1,12 +1,17 @@
-@extends('layouts.app2')
-@section('content')
+<?php 
+    $layout = \config('hemmy_role_manager.view.layout');
+    $display_section = \config('hemmy_role_manager.view.display_section');
+    $after_js_section = \config('hemmy_role_manager.view.after_js_section');
+?>
+@extends($layout)
+@section($display_section)
     <div class="col-md-8">
         <div class="card border-left-success shadow py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <h1 class="h4 text-gray-900 mb-4">@lang('words.role')</h1>
-                    <form disabled method="POST" action="{{ route('role.store') }}">
+                    <form disabled method="POST" action="{{ route('hemmy_role.store') }}">
                         <fieldset {{ $disabled ?? ''}} >
                             @csrf
                             <div class="form-group">

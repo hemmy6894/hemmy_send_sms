@@ -7,7 +7,7 @@
 @section($display_section)
     <div class="row">
         <div class="col-md-12 text-right m-1">
-            <a href="{{ route('hemmy_role.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm pull-right"><i class="fas fa-asterisk fa-sm text-white-50"></i> @lang('words.btn_new')</a>
+            <a href="{{ route('hemmy_function.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm pull-right"><i class="fas fa-asterisk fa-sm text-white-50"></i> @lang('words.btn_new')</a>
         </div>
     </div>
     <div class="row">
@@ -22,16 +22,16 @@
                                     <thead>
                                         <th>@lang('words.name')</th>
                                         <th colspan="3">@lang('words.action')</th>
-                                    </thead>roles
+                                    </thead>
                                     <tbody>
-                                        @forelse($roles as $role)
+                                        @forelse($functions as $function)
                                             <tr>
-                                                <td>{{ $role->role_name }}</td>
-                                                <td><a href="{{ route('role.show',['role' => $role->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
-                                                <td><a href="{{ route('role.edit',['role' => $role->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
+                                                <td>{{ $function->function_name }}</td>
+                                                <td><a href="{{ route('function.show',['function' => $function->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
+                                                <td><a href="{{ route('function.edit',['function' => $function->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
                                                 <td>
-                                                    <a href="{{ route('role.edit',['role' => $role->id ]) }}?block={{$role->status}}" class="btn btn-sm btn-danger">
-                                                        @if($role->status)
+                                                    <a href="{{ route('function.edit',['function' => $function->id ]) }}?block={{$function->status}}" class="btn btn-sm btn-danger">
+                                                        @if($function->status)
                                                             Block
                                                         @else
                                                             Unblock
@@ -40,11 +40,11 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            @lang('words.user_not_found');
+                                            @lang('words.function_not_found');
                                         @endforelse
                                     </tbody>
                                 </table>
-                                {{ $roles->appends($_GET)->links() }}
+                                {{ $functions->appends($_GET)->links() }}
                             </div>
                         </div>
                     </div>

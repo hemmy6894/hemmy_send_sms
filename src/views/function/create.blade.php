@@ -3,20 +3,19 @@
     $display_section = \config('hemmy_role_manager.view.display_section');
     $after_js_section = \config('hemmy_role_manager.view.after_js_section');
 ?>
-@extends(@layout)
+@extends($layout)
 @section($display_section)
     <div class="col-md-8">
         <div class="card border-left-success shadow py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <h1 class="h4 text-gray-900 mb-4">@lang('words.role')</h1>
-                    <form disabled method="POST" action="{{ route('hemmy_role.update',['role' => $role->id ]) }}?ids">
+                    <h1 class="h4 text-gray-900 mb-4">@lang('words.function')</h1>
+                    <form disabled method="POST" action="{{ route('hemmy_function.store') }}">
                         <fieldset {{ $disabled ?? ''}} >
                             @csrf
-                            @method('PUT')
                             <div class="form-group">
-                                <input type="name" value="{{ $role->role_name }}" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="@lang('words.enter_name')">
+                                <input type="name"  name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="@lang('words.enter_name')">
                                 @if($errors->has('name'))
                                     <span class="text-danger"><small>{{ $errors->first('name') }}</small></span>
                                 @endif
