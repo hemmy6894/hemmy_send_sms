@@ -27,10 +27,10 @@
                                         @forelse($functions as $function)
                                             <tr>
                                                 <td>{{ $function->function_name }}</td>
-                                                <td><a href="{{ route('function.show',['function' => $function->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
-                                                <td><a href="{{ route('function.edit',['function' => $function->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
+                                                <td><a href="{{ route('hemmy_function.show',['hemmy_function' => $function->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
+                                                <td><a href="{{ route('hemmy_function.edit',['hemmy_function' => $function->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
                                                 <td>
-                                                    <a href="{{ route('function.edit',['function' => $function->id ]) }}?block={{$function->status}}" class="btn btn-sm btn-danger">
+                                                    <a href="{{ route('hemmy_function.edit',['hemmy_function' => $function->id ]) }}?block={{$function->status}}" class="btn btn-sm btn-danger">
                                                         @if($function->status)
                                                             Block
                                                         @else

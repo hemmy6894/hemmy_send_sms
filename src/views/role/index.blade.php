@@ -26,11 +26,11 @@
                                     <tbody>
                                         @forelse($roles as $role)
                                             <tr>
-                                                <td>{{ $role->role_name }}</td>
-                                                <td><a href="{{ route('role.show',['role' => $role->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
-                                                <td><a href="{{ route('role.edit',['role' => $role->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
+                                                <td>{{ $role->name }}</td>
+                                                <td><a href="{{ route('hemmy_role.show',['hemmy_role' => $role->id ]) }}" class="btn btn-sm btn-success"><span class="fas fa-eye"></span></a></td>
+                                                <td><a href="{{ route('hemmy_role.edit',['hemmy_role' => $role->id ]) }}" class="btn btn-sm btn-warning"><span class="fas fa-pen"></span></a></td>
                                                 <td>
-                                                    <a href="{{ route('role.edit',['role' => $role->id ]) }}?block={{$role->status}}" class="btn btn-sm btn-danger">
+                                                    <a href="{{ route('hemmy_role.edit',['hemmy_role' => $role->id ]) }}?block={{$role->status}}" class="btn btn-sm btn-danger">
                                                         @if($role->status)
                                                             Block
                                                         @else
