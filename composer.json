@@ -1,6 +1,6 @@
 {
     "name": "hemmy/hemmy_package",
-    "description": "This is my first package",
+    "description": "This package manage roles and access via database and blade template (Under development need access to contribute contact me (hemmy6894@gmail.com)) ",
     "type": "library",
     "license": "MIT",
     "require": {
