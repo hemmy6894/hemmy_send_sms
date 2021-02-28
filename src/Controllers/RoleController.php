@@ -4,6 +4,7 @@ namespace Hemmy\RoleManager\Controllers;
 
 use App\Http\Controllers\Controller;
 use Hemmy\RoleManager\Models\RoleModel;
+use Hemmy\RoleManager\Models\UserRoleModel;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller

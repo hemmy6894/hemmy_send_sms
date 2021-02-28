@@ -35,13 +35,13 @@ class UserRoleModel extends Model
         $array_user_per_function = array();
         foreach($functions as $function){
             foreach($roles as $role){
-                $id = $function->function_name ."-".$role->role_name;
+                $id = $function->function_name ."-".$role->name;
                 if(UserRoleModel::where(DB::raw('rid'),"=",$id)->count() > 0){
                     $statuses = UserRoleModel::where(DB::raw('rid'),"=",$id)
                                 ->first();                                          
-                    $array_user_per_function[$role->role_name][$id] = $statuses->status;
+                    $array_user_per_function[$role->name][$id] = $statuses->status;
                 }else{
-                    $array_user_per_function[$role->role_name][$id] = 0;
+                    $array_user_per_function[$role->name][$id] = 0;
                 }
             }
         }
@@ -54,7 +54,7 @@ class UserRoleModel extends Model
         if($role != ""){
             $role = RoleModel::where('id',$role);
             if($role->count()){
-                $role = $role->get()[0]->role_name;
+                $role = $role->get()[0]->name;
             }
         }
         $roles =  $query->where('role','=',$role)->get();

@@ -12,5 +12,9 @@
 <br>
 
 <code> composer require hemmy/hemmy_package </code>
+
 </br>
 <code> php artisan vendor:publish --provider="Hemmy\RoleManager\RoleManagerServiceProvider" </code>
+
+<br>
+<code> php artisan migrate </code>

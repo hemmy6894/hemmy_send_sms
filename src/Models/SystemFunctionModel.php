@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SystemFunctionModel extends Model
 {
     //
-    protected $table = "hemmy_system_functions";
+    protected $table = "hemmy_functions";
     protected $fillable = ['function_name'];
 
     public function scopeActive($query){
