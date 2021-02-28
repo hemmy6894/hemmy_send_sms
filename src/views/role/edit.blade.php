@@ -17,9 +17,6 @@
                             @method('PUT')
                             <div class="form-group">
                                 <input type="name" value="{{ $role->role_name }}" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="@lang('words.enter_name')">
-                                @if($errors->has('name'))
-                                    <span class="text-danger"><small>{{ $errors->first('name') }}</small></span>
-                                @endif
                             </div>
                             @if(($disabled ?? '') != 'disabled')
                                 <div class="form-group">
