@@ -12,14 +12,14 @@
 <br>
 <code> 
     use Hemmy\SendSms\Controllers\HemmySendSms;
-    </br>
-    </br>
+    <br>
+    <br>
     ...
-    </br>
+    <br>
     HemmySendSms::send($to,$message)
-    </br>
+    <br>
     ...
-    </br>
+    <br>
 </code>
 
 <br>
