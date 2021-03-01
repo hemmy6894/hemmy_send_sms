@@ -12,14 +12,14 @@
 <br>
 <code> 
     use Hemmy\SendSms\Controllers\HemmySendSms;
-    <br>
-    <br>
+    </br>
+    </br>
     ...
-    <br>
-    HemmySendSms::send($to,$message,$sender,$mms=0,$unicode=0,$media="")
-    <br>
+    </br>
+    HemmySendSms::send($to,$message)
+    </br>
     ...
-    <br>
+    </br>
 </code>
 
 <br>
@@ -39,11 +39,6 @@
             <td>$message</td>
             <td>This carries message</td>
             <td>Hollow how are you??</td>
-        </tr>
-        <tr>
-            <td>$sender</td>
-            <td>This carries sender ID</td>
-            <td>YOUR_SENDER_ID</td>
         </tr>
     </table>
 </code>
