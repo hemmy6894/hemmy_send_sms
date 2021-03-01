@@ -14,7 +14,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "version": "0.0.001",
+    "version": "0.0.002",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
