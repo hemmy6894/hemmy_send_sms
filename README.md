@@ -1,20 +1,49 @@
-<h1>Hemmy laravel roles Manager</h1>
+<h1>Hemmy Send Sms (nextsms.co.tz) PHP</h1>
 </br>
-<h3>This package manager roles per user groups</h3>
-
-<b>Uses</b>
-<ul>
-    <li>http://server_ip/hemmy_function to view all function and there you can create new system function</li>
-    <li>http://server_ip/roles to view all roles and there you can create new system function</li>
-</ul>
+<h3>This package enable to send sms using nextsms.co.tz</h3>
 
 <br>
-<br>
 
-<code> composer require hemmy/hemmy_package </code>
+<code> composer require hemmy/hemmy_send_sms </code>
 
 </br>
-<code> php artisan vendor:publish --provider="Hemmy\RoleManager\RoleManagerServiceProvider" </code>
+<code> php artisan vendor:publish --provider="Hemmy\SendSms\SendSmsServiceProvider" </code>
 
 <br>
-<code> php artisan migrate </code>
+<code> 
+    use Hemmy\SendSms\Controllers\HemmySendSms;
+    <br>
+    <br>
+    ...
+    <br>
+    HemmySendSms::send($to,$message,$sender,$mms=0,$unicode=0,$media="")
+    <br>
+    ...
+    <br>
+</code>
+
+<br>
+<code>
+    <table>
+        <tr>
+            <td>Variable</td>
+            <td>Description</td>
+            <td>Example</td>
+        </tr>
+        <tr>
+            <td>$to</td>
+            <td>This carries all user phone numbers</td>
+            <td>[25568563965*,255XXXXXXXXX]</td>
+        </tr>
+        <tr>
+            <td>$message</td>
+            <td>This carries message</td>
+            <td>Hollow how are you??</td>
+        </tr>
+        <tr>
+            <td>$sender</td>
+            <td>This carries sender ID</td>
+            <td>YOUR_SENDER_ID</td>
+        </tr>
+    </table>
+</code>

@@ -1,6 +1,6 @@
 {
-    "name": "hemmy/hemmy_package",
-    "description": "This package manage roles and access via database and blade template (Under development need access to contribute contact me (hemmy6894@gmail.com)) ",
+    "name": "hemmy/hemmy_send_sms",
+    "description": "This package enable to send sms using nextsms.co.tz",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Hemmy\\RoleManager\\RoleManagerServiceProvider"
+                "Hemmy\\SendSms\\SendSmsServiceProvider"
             ]
         }
     }
