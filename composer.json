@@ -18,7 +18,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Hemmy\\RoleManager\\": "src/"
+            "Hemmy\\SendSms\\": "src/"
         }
     },
     "extra": {
