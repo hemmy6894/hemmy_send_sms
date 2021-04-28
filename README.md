@@ -33,11 +33,13 @@ For single sms to multiple recepient
             <td>Description</td>
             <td>Example</td>
         </tr>
+        <br />
         <tr>
             <td>$to</td>
             <td>This carries all user phone numbers</td>
             <td>[25568563965*,255XXXXXXXXX]</td>
         </tr>
+        <br />
         <tr>
             <td>$message</td>
             <td>This carries message</td>
@@ -70,11 +72,13 @@ Now you can send multiple sms to multiple recepient
             <td>Description</td>
             <td>Example</td>
         </tr>
+        <br />
         <tr>
             <td>$to</td>
             <td>This carries all user phone numbers</td>
             <td>[25568563965*,255XXXXXXXXX]</td>
         </tr>
+        <br />
         <tr>
             <td>$message</td>
             <td>This carries message</td>
