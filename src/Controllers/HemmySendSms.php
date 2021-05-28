@@ -10,20 +10,26 @@ class HemmySendSms
     /**
      * This is function to send sms only $to is required
      */
-    public static function send($to=[],$message="Hollow how are you??"){
+    public static function send($to=[],$message="Hollow how are you??",$senderId="NEXTSMS",$hash="",$default=true){
         $sender = config('hemmy_next_sms.sender')??"NEXTSMS";
+        if(!$default){
+            $sender = $senderId;
+        }
         $array = [
                 'from'  => $sender,
                 'to'    => $to,
                 'text'  => $message
             ];
         $request = json_encode($array);
-        return HemmySendSms::request($request,HemmySendSms::$api);
+        return HemmySendSms::request($request,HemmySendSms::$api,$hash);
     }
 
-    public static function sendMultiple($to=[],$message=[]){
+    public static function sendMultiple($to=[],$message=[],$senderId="NEXTSMS",$hash="",$default=true){
         $sender = config('hemmy_next_sms.sender')??"NEXTSMS";
         $arrays = [];
+        if(!$default){
+            $sender = $senderId;
+        }
         foreach($to as $key => $val){
             $array = [
                     'from'  => $sender,
@@ -33,12 +39,19 @@ class HemmySendSms
             $arrays[] = $array;
         }
         $request = json_encode(["messages" => $arrays]);
-        return HemmySendSms::request($request,HemmySendSms::$apiMultiple);
+        return HemmySendSms::request($request,HemmySendSms::$apiMultiple,$hash);
     }
 
-    public static function request($array,$api)
+    public static function request($array,$api,$hash="")
     {
         $headers = config('hemmy_next_sms.headers')??array();
+        if($hash != ""){
+            $headers = [
+                "Authorization: Basic $hash",
+                'Content-Type: application/json',
+                'Accept: application/json'
+            ];
+        }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $api);
         curl_setopt($ch, CURLOPT_POST, 1);
