@@ -2,6 +2,7 @@
 </br>
 <h3>This package enable to send sms using nextsms.co.tz</h3>
 
+<p>Support Laravel 11</p>
 <br>
 
 <code> composer require hemmy/hemmy_send_sms </code>
