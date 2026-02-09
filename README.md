@@ -2,7 +2,7 @@
 
 ## This package enables sending SMS using nextsms.co.tz
 
-### Supports Laravel 11
+### Supports Laravel 12
 
 ```bash
 composer require hemmy/hemmy_send_sms
