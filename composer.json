@@ -19,7 +19,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "version": "1",
+    "version": "1.0.1",
     "prefer-stable": true,
     "extra": {
         "laravel": {
