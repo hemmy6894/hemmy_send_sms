@@ -5,6 +5,7 @@ namespace Hemmy\SendSms\Services;
 class HemmySendSmsService
 {
     protected $api = "https://messaging-service.co.tz/api/sms/v1/text/single";
+    protected $balance = "https://messaging-service.co.tz/api/sms/v1/balance";
     protected $apiMultiple = "https://messaging-service.co.tz/api/sms/v1/text/multi";
 
     public function send($to = [], $message = "Hello, how are you?", $senderId = "NEXTSMS", $hash = "", $default = true)
@@ -36,6 +37,12 @@ class HemmySendSmsService
         }
 
         return $this->request(json_encode($payload), $this->apiMultiple, $hash);
+    }
+
+    public function getBalance($hash = "")
+    {
+        $payload = [];
+        return $this->request(json_encode($payload), $this->balance, $hash);
     }
 
     protected function request($payload, $api, $hash = "")
