@@ -42,10 +42,10 @@ class HemmySendSmsService
     public function getBalance($hash = "")
     {
         $payload = [];
-        return $this->request(json_encode($payload), $this->balance, $hash);
+        return json_decode($this->request(($payload), $this->balance, $hash, 'GET'))->sms_balance??0;
     }
 
-    protected function request($payload, $api, $hash = "")
+    protected function request($payload, $api, $hash = "", $method = "POST")
     {
         $headers = config('hemmy_next_sms.headers', []);
 
@@ -58,15 +58,24 @@ class HemmySendSmsService
         }
 
         $ch = curl_init();
+
+        if ($method === "GET" && !empty($payload)) {
+            $api .= '?' . http_build_query($payload);
+        }
+
         curl_setopt($ch, CURLOPT_URL, $api);
-        curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        if ($method === "POST") {
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        }
 
         $response = curl_exec($ch);
+
         curl_close($ch);
 
         return $response ?: "Check your internet connection";
