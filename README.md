@@ -12,6 +12,14 @@ composer require hemmy/hemmy_send_sms
 php artisan vendor:publish --tag=hemmy_next_sms
 ```
 
+### GET balance
+```php
+use Hemmy\SendSms\Controllers\HemmySendSms;
+
+$count = HemmySendSms::getBalance();
+
+```
+
 ### Sending a Single SMS to Multiple Recipients
 ```php
 use Hemmy\SendSms\Controllers\HemmySendSms;
